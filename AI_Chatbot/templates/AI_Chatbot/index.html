@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- style improt -->
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'AI_Chatbot/style.css'%}">
+
+<!-- jQuery CDN link -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+    <!-- <h1>This is django app</h1> -->
+
+    <h1>Chatbot App</h1>
+
+<div>
+    <div id="chatbot">
+        <p class="botText"><span>Hi there</span></p>
+    </div>
+
+    <div id="userInput">
+        <input type="text" id="textInput" name="UserMessage" placeholder="Type your message..."/>
+        <input type="submit" value="Send" id="buttonInput"/>
+    </div>
+</div>
+
+
+<script>
+
+    function getUserResponce(){
+        var userText = $('#textInput').val();
+        var userHTML = "<p class='userText'>User: <span>"+userText+"</span></p>"
+            $('#textInput').val("");
+
+            $('#chatbot').append(userHTML);
+    }
+
+</script>
+
+</body>
+</html>

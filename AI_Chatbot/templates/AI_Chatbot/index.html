@@ -41,6 +41,13 @@
             $('#textInput').val("");
 
             $('#chatbot').append(userHTML);
+
+            $.get('/AI_Chatbot/getResponse',{userMessage : userText}).done(function(data){
+
+                var returnedMessage = "<p class ='botText'>Chatbot: <span>"+ data +"</span></p>";
+                $('#chatbot').append(returnedMessage);
+                
+            })
     }
 
 

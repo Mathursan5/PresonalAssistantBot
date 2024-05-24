@@ -10,5 +10,9 @@ def index(request):
 def specific(request):
     return HttpResponse(list)
 
+def getResponse(request):
+    userMessage = request.GET.get('userMessage')
+    return HttpResponse(userMessage)
+
 # def article(requeset,article_id):
 #     return render(requeset,'AI_Chatbot/index.html',{article_id:article_id})
